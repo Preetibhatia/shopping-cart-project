@@ -1,5 +1,7 @@
 #shopping_cart.py
 #from pprint import pprint
+import datetime
+
 products = [
     {"id":1, "name": "Chocolate Sandwich Cookies", "department": "snacks", "aisle": "cookies cakes", "price": 3.50},
     {"id":2, "name": "All-Seasons Salt", "department": "pantry", "aisle": "spices seasonings", "price": 4.99},
@@ -26,3 +28,29 @@ print(products)
 #pprint(products)
 
 #TODO: write some python code here to produce the desired output
+
+#Input items from user
+
+#look up the items entered and calculate price/taxes
+
+#print the reciept
+print ("---------------------------------------------")
+print ("---------------------------------------------")
+print ("Thank you for shopping at Preeti's grocery")
+print ("+1 201-423-3429  Jersey City")
+now = datetime.date
+now
+print ("the time is", now)
+
+
+
+
+
+
+
+
+
+
+
+
+
