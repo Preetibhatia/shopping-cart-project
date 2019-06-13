@@ -58,7 +58,7 @@ while(str(id_input)!='DONE'):
             break
         i=i+1
     if found==False:
-        print("ID not found, kindly enter a valid ID")
+        print("Hey, are you sure that product identifier is correct? Please try again!")
 
 
            
@@ -76,25 +76,22 @@ print("You selected " +str(customer_product_count) +" PRODUCTS:")
 
 for p in customer_list:
    price_usd = "(${0:.2f})".format(p["price"])
-   print ("..... " + p["name"] + price_usd )
+   print ("..... " + p["name"] + " " + price_usd )
 
 print ("---------------------------------------------")
 
 for p in customer_list:
     price.append(p['price'])
+    Tax.append(p['price']*0.0875)
 Total_price = "${0:.2f}".format(sum(price))
-Tax=
+Total_Tax =  "${0:.2f}".format(sum(Tax))
+#Total =  "${0:.2f}".format(sum(int (Total_price), int(Total_Tax)))
+Total = "${0:.2f}".format(sum(price) + sum(Tax))
+
 print("SUBTOTAL: ", Total_price) 
+print("TAX: ", Total_Tax) 
+print("Total: ", Total) 
 
-for p in customer_list:
-
-
-
-#Print Time: Change time into format as required
-#print the sorted list of products purchased
-
-
-
-
-
-
+print ("---------------------------------------------")
+print ("THANKS, SEE YOU AGAIN SOON!")
+print ("---------------------------------------------")
