@@ -1,7 +1,10 @@
 #shopping_cart.py
 #from pprint import pprint
 import datetime
-
+import statistics
+time = datetime.datetime.now()
+#TODO covert to CSV
+#send receipt via email
 products = [
     {"id":1, "name": "Chocolate Sandwich Cookies", "department": "snacks", "aisle": "cookies cakes", "price": 3.50},
     {"id":2, "name": "All-Seasons Salt", "department": "pantry", "aisle": "spices seasonings", "price": 4.99},
@@ -24,30 +27,71 @@ products = [
     {"id":19, "name": "Gluten Free Quinoa Three Cheese & Mushroom Blend", "department": "dry goods pasta", "aisle": "grains rice dried goods", "price": 3.99},
     {"id":20, "name": "Pomegranate Cranberry & Aloe Vera Enrich Drink", "department": "beverages", "aisle": "juice nectars", "price": 4.25}
 ] # based on data from Instacart: https://www.instacart.com/datasets/grocery-shopping-2017
-print(products)
+#print(products)
 #pprint(products)
 
-#TODO: write some python code here to produce the desired output
 
-#Input items from user
+#create a list to input items from user till they enter Done
 
-#look up the items entered and calculate price/taxes
+id_input=None
+price=None
+no_items=0
+total_list=len(products)
+price=[]
+customer_list =[]
+Tax=[]
+
+while(str(id_input)!='DONE'):
+    id_input=input("Please enter the product id: ")
+    i=0
+    found=False
+
+    while(i<total_list):
+
+        if (id_input)==str(products[i]['id']):
+            found=True
+            ##price=products[i]['price']
+            #price.append(products[i]['price'])
+            customer_list.append(products[i])
+            #name=products[i]['name']
+            #print("name", name,"price",price)
+            break
+        i=i+1
+    if found==False:
+        print("ID not found, kindly enter a valid ID")
+
+
+           
 
 #print the reciept
+customer_product_count = len(customer_list)
+
 print ("---------------------------------------------")
+print ("Preeti's Grocery Store")
+print ("www.preetigrocerystore.com")
 print ("---------------------------------------------")
-print ("Thank you for shopping at Preeti's grocery")
-print ("+1 201-423-3429  Jersey City")
-now = datetime.date
-now
-print ("the time is", now)
+print ("CHECKOUT AT:"+ str(time))
+print ("---------------------------------------------")
+print("You selected " +str(customer_product_count) +" PRODUCTS:")
+
+for p in customer_list:
+   price_usd = "(${0:.2f})".format(p["price"])
+   print ("..... " + p["name"] + price_usd )
+
+print ("---------------------------------------------")
+
+for p in customer_list:
+    price.append(p['price'])
+Total_price = "${0:.2f}".format(sum(price))
+Tax=
+print("SUBTOTAL: ", Total_price) 
+
+for p in customer_list:
 
 
 
-
-
-
-
+#Print Time: Change time into format as required
+#print the sorted list of products purchased
 
 
 
