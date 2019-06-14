@@ -1,10 +1,12 @@
 #shopping_cart.py
-#from pprint import pprint
+
 import datetime
 import statistics
 time = datetime.datetime.now()
+
 #TODO covert to CSV
 #send receipt via email
+
 products = [
     {"id":1, "name": "Chocolate Sandwich Cookies", "department": "snacks", "aisle": "cookies cakes", "price": 3.50},
     {"id":2, "name": "All-Seasons Salt", "department": "pantry", "aisle": "spices seasonings", "price": 4.99},
@@ -27,8 +29,6 @@ products = [
     {"id":19, "name": "Gluten Free Quinoa Three Cheese & Mushroom Blend", "department": "dry goods pasta", "aisle": "grains rice dried goods", "price": 3.99},
     {"id":20, "name": "Pomegranate Cranberry & Aloe Vera Enrich Drink", "department": "beverages", "aisle": "juice nectars", "price": 4.25}
 ] # based on data from Instacart: https://www.instacart.com/datasets/grocery-shopping-2017
-#print(products)
-#pprint(products)
 
 
 #create a list to input items from user till they enter Done
@@ -41,6 +41,7 @@ price=[]
 customer_list =[]
 Tax=[]
 
+
 while(str(id_input)!='DONE'):
     id_input=input("Please enter the product id: ")
     i=0
@@ -50,25 +51,20 @@ while(str(id_input)!='DONE'):
 
         if (id_input)==str(products[i]['id']):
             found=True
-            ##price=products[i]['price']
-            #price.append(products[i]['price'])
             customer_list.append(products[i])
-            #name=products[i]['name']
-            #print("name", name,"price",price)
             break
         i=i+1
-    if found==False:
+    if str(id_input)=='DONE':
+        break
+    elif found==False:
         print("Hey, are you sure that product identifier is correct? Please try again!")
-
-
-           
 
 #print the reciept
 customer_product_count = len(customer_list)
 
 print ("---------------------------------------------")
-print ("Preeti's Grocery Store")
-print ("www.preetigrocerystore.com")
+print ("PREETI'S GROCERY STORE")
+print ("WWW.PREETIGROCERYSTORE.COM")
 print ("---------------------------------------------")
 print ("CHECKOUT AT:"+ str(time))
 print ("---------------------------------------------")
@@ -76,8 +72,7 @@ print("You selected " +str(customer_product_count) +" PRODUCTS:")
 
 for p in customer_list:
    price_usd = "(${0:.2f})".format(p["price"])
-   print ("..... " + p["name"] + " " + price_usd )
-
+   print ("....... " + p["name"] + " " + price_usd )
 print ("---------------------------------------------")
 
 for p in customer_list:
