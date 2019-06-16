@@ -49,7 +49,7 @@ Tax=[]
 
 
 while(str(id_input)!='DONE'):
-    id_input=input("Please enter the product ID:, or DONE: ")
+    id_input=input("Please enter the product ID:, or DONE:   ")
     i=0
     found=False
 
