@@ -5,15 +5,12 @@ import statistics
 time = datetime.datetime.now()
 import pandas as pd
 
-#url=https://github.com/prof-rossetti/nyu-info-2335-201905/blob/master/data/products.csv
-#col_names = ["col1", "col2", "col3","col4","col5","col6"]
-products =pd.read_csv("products.csv")
-
-#print(c)
+url = 'https://raw.githubusercontent.com/prof-rossetti/nyu-info-2335-201905/master/data/products.csv'
 
 
+c =pd.read_csv(url)
+products=c.to_dict("records")
 
-# #TODO covert to CSV
 # #send receipt via email
 
 # products = [
@@ -52,7 +49,7 @@ Tax=[]
 
 
 while(str(id_input)!='DONE'):
-    id_input=input("Please enter the product id: ")
+    id_input=input("Please enter the product ID: ")
     i=0
     found=False
 
